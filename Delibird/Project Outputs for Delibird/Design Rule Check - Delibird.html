@@ -1,0 +1,537 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2020-09-06</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">6:31:03 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc" class="file"><acronym title="C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc">C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">63</td></tr>
+</table>
+</td>
+</table><a name="IDW1XXGVKGIYMFJZRIKIWKZ11OQH2OD5CGCILYLC54PMF5RWDGF0L"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFI2HQIHUXNRCMHO4CCC05EME1H2WZGLACDFS4ZNZ05CESP34WTUN">Clearance Constraint (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSZ5XKGSDIYALBKI22B1011PVIH3U4NZU30XJCXPB2VYUWLXODBCJ">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUXDR01HDFTIZ0UOWPSA12P0MGYFN00HOOERC2PXBAYU4RXM2LLJ">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ02WE2WSL04JCDS45H332BVO1NE03QW0MGLAHKCWTF3VEX1EITXJ">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDB1T1IDC2VHVX1GZZ2EJJUEMEHYH0MMECDHXDHSFEF1O0AWHIRO">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYOGCTYOXEV4DLQL0ZXQ3MRYXINL2YB4Z4OZGLI4EKJBV1UTCVTJ">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXFAJYF30F2NUD3NDFJYQOLIQHBQ0IUBGRLNL1QF2ONWFR53PL5ED">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOHAGJPHECDQHPIGES1K5E0ZDQPPGH4YAELNFFKG50ICNANI245RL">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBVHGDANREW0SPM0U1SOP1TMSQNQRR3DVC45SX1PNUZ1Q0OMFHDUJ">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID24S3PVE2B2AFF140QBP35HFW2IW5GMLAKZSDQOG2HASEJ0T5WQJM">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">49</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOPZVVPP1EEZCYTAHZSEOLRHBD0D53DJJ2RRBPJNCV2S0ZHD2OZC">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMASGOZZ4HRZFBEQZG0GSGL04GNGXLTVA2VTSVVBCKSOIJET0KF4">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1VRBX1CT50I4PGUQA31CVQPIZD2LEDXC4VX543H4IHWG4LCRZJTP">Room Delibird (Bounding Region = (83.928mm, 0mm, 90.252mm, 0mm) (Disabled)(InComponentClass('Delibird'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCIQBRBZN2HFRMG3EQVIX0A4APIUDJHIHROKBXQLAFYR0IGMOQNXB">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">63</td>
+</tr>
+</table><br><a name="IDUXDR01HDFTIZ0UOWPSA12P0MGYFN00HOOERC2PXBAYU4RXM2LLJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1962.284mil|Location2.X=2410.315mil|Location1.Y=2208.347mil|Location2.Y=2412.441mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1962.284mil|Location2.X=2410.315mil|Location1.Y=2208.347mil|Location2.Y=2412.441mil|Absolute=True">Un-Routed Net Constraint: Net +3.3V Between Track (25.984mm,19.338mm)(25.99mm,19.344mm) on Top Layer And Pad IC1-2(32.29mm,19.448mm) on Top Layer [Unplated] </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDBVHGDANREW0SPM0U1SOP1TMSQNQRR3DVC45SX1PNUZ1Q0OMFHDUJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.037mil|Location2.X=2370.287mil|Location1.Y=2428.627mil|Location2.Y=2439.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2359.037mil|Location2.X=2370.287mil|Location1.Y=2428.627mil|Location2.Y=2439.877mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C1-1(34.472mm,21.792mm) on Top Layer And Pad C1-2(34.472mm,23.292mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1294.784mil|Location2.X=1306.034mil|Location1.Y=2414.218mil|Location2.Y=2425.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1294.784mil|Location2.X=1306.034mil|Location1.Y=2414.218mil|Location2.Y=2425.468mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C2-1(7.44mm,21.426mm) on Top Layer And Pad C2-2(7.44mm,22.926mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.076mil|Location2.X=1955.326mil|Location1.Y=2336.108mil|Location2.Y=2347.358mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1944.076mil|Location2.X=1955.326mil|Location1.Y=2336.108mil|Location2.Y=2347.358mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C3-1(23.932mm,19.442mm) on Top Layer And Pad C3-2(23.932mm,20.942mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.659mil|Location2.X=1393.909mil|Location1.Y=2413.981mil|Location2.Y=2425.231mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1382.659mil|Location2.X=1393.909mil|Location1.Y=2413.981mil|Location2.Y=2425.231mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C4-1(9.672mm,21.42mm) on Top Layer And Pad C4-2(9.672mm,22.92mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2014.69mil|Location2.X=2025.94mil|Location1.Y=1923.761mil|Location2.Y=1935.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2014.69mil|Location2.X=2025.94mil|Location1.Y=1923.761mil|Location2.Y=1935.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C5-1(25.674mm,10.52mm) on Top Layer And Pad C5-2(24.174mm,10.52mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1140.832mil|Location2.X=1152.082mil|Location1.Y=2363.131mil|Location2.Y=2374.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1140.832mil|Location2.X=1152.082mil|Location1.Y=2363.131mil|Location2.Y=2374.381mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C6-1(1.978mm,21.68mm) on Top Layer And Pad C6-2(3.478mm,21.68mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1140.595mil|Location2.X=1151.845mil|Location1.Y=1923.761mil|Location2.Y=1935.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1140.595mil|Location2.X=1151.845mil|Location1.Y=1923.761mil|Location2.Y=1935.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad C7-1(1.972mm,10.52mm) on Top Layer And Pad C7-2(3.472mm,10.52mm) on Top Layer [Top Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1755.146mil|Location2.X=1766.396mil|Location1.Y=2421.602mil|Location2.Y=2432.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1755.146mil|Location2.X=1766.396mil|Location1.Y=2421.602mil|Location2.Y=2432.852mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.223mm &lt; 0.254mm) Between Pad J2-1(19.062mm,23.094mm) on Multi-Layer And Pad J2-4(17.792mm,21.824mm) on Multi-Layer [Top Solder] Mask Sliver [0.223mm] / [Bottom Solder] Mask Sliver [0.223mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID24S3PVE2B2AFF140QBP35HFW2IW5GMLAKZSDQOG2HASEJ0T5WQJM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1120.838mil|Location2.X=1132.088mil|Location1.Y=1922.815mil|Location2.Y=1934.065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1120.838mil|Location2.X=1132.088mil|Location1.Y=1922.815mil|Location2.Y=1934.065mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad C7-1(1.972mm,10.52mm) on Top Layer And Text "C7" (1.458mm,7.918mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1089.414mil|Location2.X=1100.664mil|Location1.Y=1983.73mil|Location2.Y=1994.98mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1089.414mil|Location2.X=1100.664mil|Location1.Y=1983.73mil|Location2.Y=1994.98mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.043mm &lt; 0.254mm) Between Pad C7-1(1.972mm,10.52mm) on Top Layer And Text "Y1" (0.602mm,13.168mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.043mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1191.457mil|Location2.X=1202.707mil|Location1.Y=1922.81mil|Location2.Y=1934.06mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1191.457mil|Location2.X=1202.707mil|Location1.Y=1922.81mil|Location2.Y=1934.06mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.252mm &lt; 0.254mm) Between Pad C7-2(3.472mm,10.52mm) on Top Layer And Text "C7" (1.458mm,7.918mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.252mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.139mil|Location2.X=2350.389mil|Location1.Y=2192.643mil|Location2.Y=2203.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2339.139mil|Location2.X=2350.389mil|Location1.Y=2192.643mil|Location2.Y=2203.893mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC1-1(32.29mm,17.148mm) on Top Layer And Track (31.415mm,16.323mm)(33.165mm,16.323mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2215.635mil|Location2.Y=2226.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2215.635mil|Location2.Y=2226.885mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-1(7.418mm,17.432mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.777mil|Location2.X=1413.027mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1401.777mil|Location2.X=1413.027mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-10(9.656mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.273mil|Location2.X=1444.523mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1433.273mil|Location2.X=1444.523mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-11(10.456mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1464.769mil|Location2.X=1476.019mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1464.769mil|Location2.X=1476.019mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-12(11.256mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1496.265mil|Location2.X=1507.515mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1496.265mil|Location2.X=1507.515mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-13(12.056mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1527.761mil|Location2.X=1539.011mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1527.761mil|Location2.X=1539.011mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-14(12.856mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1559.257mil|Location2.X=1570.507mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1559.257mil|Location2.X=1570.507mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-15(13.656mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1590.753mil|Location2.X=1602.003mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1590.753mil|Location2.X=1602.003mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-16(14.456mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2018.784mil|Location2.Y=2030.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2018.784mil|Location2.Y=2030.034mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-17(15.894mm,11.832mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2050.28mil|Location2.Y=2061.53mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2050.28mil|Location2.Y=2061.53mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-18(15.894mm,12.632mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2081.777mil|Location2.Y=2093.027mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2081.777mil|Location2.Y=2093.027mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-19(15.894mm,13.432mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2184.139mil|Location2.Y=2195.389mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2184.139mil|Location2.Y=2195.389mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-2(7.418mm,16.632mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2113.273mil|Location2.Y=2124.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2113.273mil|Location2.Y=2124.523mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-20(15.894mm,14.232mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2144.769mil|Location2.Y=2156.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2144.769mil|Location2.Y=2156.019mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-21(15.894mm,15.032mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2176.265mil|Location2.Y=2187.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2176.265mil|Location2.Y=2187.515mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-22(15.894mm,15.832mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2207.761mil|Location2.Y=2219.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2207.761mil|Location2.Y=2219.011mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-23(15.894mm,16.632mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2239.257mil|Location2.Y=2250.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1625.212mil|Location2.X=1636.462mil|Location1.Y=2239.257mil|Location2.Y=2250.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-24(15.894mm,17.432mm) on Top Layer And Track (14.806mm,11.482mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614.375mil|Location2.X=1625.625mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1614.375mil|Location2.X=1625.625mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-25(14.456mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1582.879mil|Location2.X=1594.129mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1582.879mil|Location2.X=1594.129mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-26(13.656mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1551.383mil|Location2.X=1562.633mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1551.383mil|Location2.X=1562.633mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-27(12.856mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1519.887mil|Location2.X=1531.137mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1519.887mil|Location2.X=1531.137mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-28(12.056mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.391mil|Location2.X=1499.641mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1488.391mil|Location2.X=1499.641mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-29(11.256mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2152.643mil|Location2.Y=2163.893mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2152.643mil|Location2.Y=2163.893mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-3(7.418mm,15.832mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1456.895mil|Location2.X=1468.145mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1456.895mil|Location2.X=1468.145mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-30(10.456mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.399mil|Location2.X=1436.649mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1425.399mil|Location2.X=1436.649mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-31(9.656mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.903mil|Location2.X=1405.153mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.903mil|Location2.X=1405.153mil|Location1.Y=2250.093mil|Location2.Y=2261.343mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-32(8.856mm,18.87mm) on Top Layer And Track (8.506mm,17.782mm)(14.806mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2121.147mil|Location2.Y=2132.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2121.147mil|Location2.Y=2132.397mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-4(7.418mm,15.032mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2089.651mil|Location2.Y=2100.901mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2089.651mil|Location2.Y=2100.901mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-5(7.418mm,14.232mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2058.155mil|Location2.Y=2069.405mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2058.155mil|Location2.Y=2069.405mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-6(7.418mm,13.432mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2026.659mil|Location2.Y=2037.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=2026.659mil|Location2.Y=2037.909mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-7(7.418mm,12.632mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=1995.162mil|Location2.Y=2006.412mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1359.444mil|Location2.X=1370.694mil|Location1.Y=1995.162mil|Location2.Y=2006.412mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-8(7.418mm,11.832mm) on Top Layer And Track (8.506mm,11.482mm)(8.506mm,17.782mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.281mil|Location2.X=1381.531mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1370.281mil|Location2.X=1381.531mil|Location1.Y=1984.326mil|Location2.Y=1995.576mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.251mm &lt; 0.254mm) Between Pad IC2-9(8.856mm,10.394mm) on Top Layer And Track (8.506mm,11.482mm)(14.806mm,11.482mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.251mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.343mil|Location2.X=2097.593mil|Location1.Y=2074.218mil|Location2.Y=2085.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2086.343mil|Location2.X=2097.593mil|Location1.Y=2074.218mil|Location2.Y=2085.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-1(27.519mm,13.065mm) on Top Layer And Track (26.744mm,13.765mm)(28.294mm,13.765mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=2041.737mil|Location2.Y=2052.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=2041.737mil|Location2.Y=2052.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-1(27.519mm,13.065mm) on Top Layer And Track (28.644mm,8.71mm)(28.644mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1991.737mil|Location2.Y=2002.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1991.737mil|Location2.Y=2002.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-2(27.519mm,11.795mm) on Top Layer And Track (28.644mm,8.71mm)(28.644mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1941.737mil|Location2.Y=1952.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1941.737mil|Location2.Y=1952.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-3(27.519mm,10.525mm) on Top Layer And Track (28.644mm,8.71mm)(28.644mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1891.737mil|Location2.Y=1902.987mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2152.288mil|Location2.X=2163.538mil|Location1.Y=1891.737mil|Location2.Y=1902.987mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-4(27.519mm,9.255mm) on Top Layer And Track (28.644mm,8.71mm)(28.644mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=1919.296mil|Location2.Y=1930.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=1919.296mil|Location2.Y=1930.546mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-5(32.969mm,9.255mm) on Top Layer And Track (31.844mm,8.71mm)(31.844mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=1969.296mil|Location2.Y=1980.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=1969.296mil|Location2.Y=1980.546mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-6(32.969mm,10.525mm) on Top Layer And Track (31.844mm,8.71mm)(31.844mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=2019.296mil|Location2.Y=2030.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=2019.296mil|Location2.Y=2030.546mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-7(32.969mm,11.795mm) on Top Layer And Track (31.844mm,8.71mm)(31.844mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=2069.296mil|Location2.Y=2080.546mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2295.989mil|Location2.X=2307.239mil|Location1.Y=2069.296mil|Location2.Y=2080.546mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad IC3-8(32.969mm,13.065mm) on Top Layer And Track (31.844mm,8.71mm)(31.844mm,13.61mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.477mil|Location2.X=1821.727mil|Location1.Y=2472.013mil|Location2.Y=2483.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.477mil|Location2.X=1821.727mil|Location1.Y=2472.013mil|Location2.Y=2483.263mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-1(19.062mm,23.094mm) on Multi-Layer And Track (19.962mm,23.094mm)(19.962mm,24.309mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.323mil|Location2.X=1568.573mil|Location1.Y=2400.359mil|Location2.Y=2411.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.323mil|Location2.X=1568.573mil|Location1.Y=2400.359mil|Location2.Y=2411.609mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-10(13.982mm,21.824mm) on Multi-Layer And Track (13.082mm,20.609mm)(13.082mm,24.309mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.323mil|Location2.X=1568.573mil|Location1.Y=2450.359mil|Location2.Y=2461.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1557.323mil|Location2.X=1568.573mil|Location1.Y=2450.359mil|Location2.Y=2461.609mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.25mm &lt; 0.254mm) Between Pad J2-9(13.982mm,23.094mm) on Multi-Layer And Track (13.082mm,20.609mm)(13.082mm,24.309mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1108.233mil|Location2.X=1119.483mil|Location1.Y=2065.609mil|Location2.Y=2076.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1108.233mil|Location2.X=1119.483mil|Location1.Y=2065.609mil|Location2.Y=2076.859mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.053mm &lt; 0.254mm) Between Pad Y1-1(3.1mm,14.298mm) on Top Layer And Text "Y1" (0.602mm,13.168mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.053mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDOPZVVPP1EEZCYTAHZSEOLRHBD0D53DJJ2RRBPJNCV2S0ZHD2OZC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1740.605mil|Location2.X=1751.855mil|Location1.Y=2348.032mil|Location2.Y=2359.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1740.605mil|Location2.X=1751.855mil|Location1.Y=2348.032mil|Location2.Y=2359.282mil|Absolute=True">Silk To Silk Clearance Constraint: (0.028mm &lt; 0.254mm) Between Text "J2" (17.454mm,18.83mm) on Top Overlay And Track (13.082mm,20.609mm)(19.062mm,20.609mm) on Top Overlay Silk Text to Silk Clearance [0.028mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDMASGOZZ4HRZFBEQZG0GSGL04GNGXLTVA2VTSVVBCKSOIJET0KF4"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1474.256mil|Location2.X=1497.845mil|Location1.Y=1817.091mil|Location2.Y=1851.29mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1474.256mil|Location2.X=1497.845mil|Location1.Y=1817.091mil|Location2.Y=1851.29mil|Absolute=True">Net Antennae: Track (11.27mm,7.082mm)(11.27mm,10.38mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.153mil|Location2.X=1566.742mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.153mil|Location2.X=1566.742mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True">Net Antennae: Track (12.056mm,8.032mm)(13.02mm,7.068mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1342.996mil|Location2.X=1366.585mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1342.996mil|Location2.X=1366.585mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True">Net Antennae: Track (7.936mm,7.068mm)(9.656mm,8.788mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1406.461mil|Location2.X=1430.049mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Delibird\Delibird.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1406.461mil|Location2.X=1430.049mil|Location1.Y=1816.539mil|Location2.Y=1850.739mil|Absolute=True">Net Antennae: Track (9.548mm,7.068mm)(10.456mm,7.976mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

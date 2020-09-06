@@ -1,0 +1,52 @@
+Added Component: Designator=J3(050LTB2)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.farnell.com/datasheets/2644146.pdf?_ga=2.63921641.795442872.1562935128-2061028581.1560430415"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Oxley"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J4(050LTB2)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.farnell.com/datasheets/2644146.pdf?_ga=2.63921641.795442872.1562935128-2061028581.1560430415"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Oxley"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J5(050LTB2)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.farnell.com/datasheets/2644146.pdf?_ga=2.63921641.795442872.1562935128-2061028581.1560430415"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Oxley"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J6(050LTB2)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.farnell.com/datasheets/2644146.pdf?_ga=2.63921641.795442872.1562935128-2061028581.1560430415"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Oxley"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "050/LT/B2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MISO Pin=IC2-12
+Added Pin To Net: NetName=MISO Pin=J4-1
+Added Net: Name=MISO
+Added Pin To Net: NetName=MOSI Pin=IC2-13
+Added Pin To Net: NetName=MOSI Pin=J3-1
+Added Net: Name=MOSI
+Added Pin To Net: NetName=NSS Pin=IC2-10
+Added Pin To Net: NetName=NSS Pin=J6-1
+Added Net: Name=NSS
+Added Pin To Net: NetName=SCK Pin=IC2-11
+Added Pin To Net: NetName=SCK Pin=J5-1
+Added Net: Name=SCK
+Added Member To Class: ClassName=Delibird Member=Component J3 MOSI
+Added Member To Class: ClassName=Delibird Member=Component J4 MISO
+Added Member To Class: ClassName=Delibird Member=Component J5 SCK
+Added Member To Class: ClassName=Delibird Member=Component J6 NSS

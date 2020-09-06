@@ -1,0 +1,21 @@
+Added Component: Designator=J3(SHDR4W64P0X250_1X4_1250X380X600P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "B4B-EH-A (LF) (SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://www.jst-mfg.com/product/pdf/eng/eEH.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "JST (JAPAN SOLDERLESS TERMINALS)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B4B-EH-A (LF) (SN)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR1X2H)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MOSI Pin=J3-1
+Added Pin To Net: NetName=MISO Pin=J3-2
+Added Pin To Net: NetName=SCK Pin=J3-3
+Added Pin To Net: NetName=NSS Pin=J3-4
+Added Pin To Net: NetName=SCL Pin=P1-1
+Added Pin To Net: NetName=SDA Pin=P1-2
+Added Member To Class: ClassName=Delibird Member=Component J3 B4B-EH-A__LF___SN_
+Added Member To Class: ClassName=Delibird Member=Component P1 Header 2H
