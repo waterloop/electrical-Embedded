@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=Elekid.SchDoc
+Record=SheetSymbol|SourceDocument=Elekid.SchDoc|Designator=Buck Conversion|SchDesignator=Buck Conversion|FileName=Elekid_02.SchDoc|SymbolType=Normal|RawFileName=Elekid_02.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Elekid.SchDoc|Designator=Input Protection|SchDesignator=Input Protection|FileName=Elekid_01.SchDoc|SymbolType=Normal|RawFileName=Elekid_01.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Elekid.SchDoc|Designator=LED and LDO|SchDesignator=LED and LDO|FileName=Elekid_04.SchDoc|SymbolType=Normal|RawFileName=Elekid_04.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Elekid.SchDoc|Designator=Monitoring/Control|SchDesignator=Monitoring/Control|FileName=Elekid_03.SchDoc|SymbolType=Normal|RawFileName=Elekid_03.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
