@@ -8,3 +8,6 @@
 *.SchDocPreview
 *.SchDocPreview
 *.SchDocPreview
+*.drc
+*.html
+*.SchDocPreview
