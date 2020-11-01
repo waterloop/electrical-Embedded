@@ -1,0 +1,3 @@
+[submodule "Libraries/Waterloop"]
+	path = Libraries/Waterloop
+	url = https://github.com/waterloop/electrical-AltiumLibraries
