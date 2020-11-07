@@ -105,8 +105,185 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BPWKKSCM
 
+[Document5]
+DocumentPath=JLCPCB.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Temperature_Sensor\Design Rule Check - Temperature_Sensor.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.REP
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.TXT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -228,7 +405,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Brother MFC-240C USB Printer
+TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
@@ -359,6 +536,10 @@ OutputName5=Gerber Files
 OutputDocumentPath5=
 OutputVariantName5=[No Variations]
 OutputDefault5=0
+Configuration5_Name1=ForceUpdateSettings
+Configuration5_Item1=False
+Configuration5_Name2=OutputConfigurationParameter1
+Configuration5_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=500000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
 OutputType6=Gerber X2
 OutputName6=Gerber X2 Files
 OutputDocumentPath6=
@@ -541,78 +722,6 @@ OutputDocumentPath17=
 OutputVariantName17=
 OutputDefault17=0
 PageOptions17=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType18=Text Print
-OutputName18=Text Print
-OutputDocumentPath18=
-OutputVariantName18=
-OutputDefault18=0
-PageOptions18=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType19=Text Print
-OutputName19=Text Print
-OutputDocumentPath19=
-OutputVariantName19=
-OutputDefault19=0
-PageOptions19=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType20=Text Print
-OutputName20=Text Print
-OutputDocumentPath20=
-OutputVariantName20=
-OutputDefault20=0
-PageOptions20=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType21=Text Print
-OutputName21=Text Print
-OutputDocumentPath21=
-OutputVariantName21=
-OutputDefault21=0
-PageOptions21=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType22=Text Print
-OutputName22=Text Print
-OutputDocumentPath22=
-OutputVariantName22=
-OutputDefault22=0
-PageOptions22=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType23=Text Print
-OutputName23=Text Print
-OutputDocumentPath23=
-OutputVariantName23=
-OutputDefault23=0
-PageOptions23=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType24=Text Print
-OutputName24=Text Print
-OutputDocumentPath24=
-OutputVariantName24=
-OutputDefault24=0
-PageOptions24=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType25=Text Print
-OutputName25=Text Print
-OutputDocumentPath25=
-OutputVariantName25=
-OutputDefault25=0
-PageOptions25=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType26=Text Print
-OutputName26=Text Print
-OutputDocumentPath26=
-OutputVariantName26=
-OutputDefault26=0
-PageOptions26=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType27=Text Print
-OutputName27=Text Print
-OutputDocumentPath27=
-OutputVariantName27=
-OutputDefault27=0
-PageOptions27=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType28=Text Print
-OutputName28=Text Print
-OutputDocumentPath28=
-OutputVariantName28=
-OutputDefault28=0
-PageOptions28=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType29=Text Print
-OutputName29=Text Print
-OutputDocumentPath29=
-OutputVariantName29=
-OutputDefault29=0
-PageOptions29=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
 
 [OutputGroup8]
 Name=Validation Outputs
@@ -1044,6 +1153,7 @@ Type119=3
 MultiChannelAlternate=2
 AlternateItemFail=3
 Type122=2
+Type123=1
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
