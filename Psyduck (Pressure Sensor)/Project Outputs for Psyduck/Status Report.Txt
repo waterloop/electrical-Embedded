@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Psyduck.PcbDoc]
+   Generated File[Psyduck.TXT]
+   Generated File[Psyduck.LDP]
+   Generated File[Psyduck.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 8:31:02 PM On 11/3/2020
