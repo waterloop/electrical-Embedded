@@ -1,0 +1,26 @@
+Output: Gerber Files
+Type  : Gerber
+From  : PCB Document [Temperature_Sensor.PcbDoc]
+   Generated File[Temperature_Sensor.GTO]
+   Generated File[Temperature_Sensor.GTP]
+   Generated File[Temperature_Sensor.GTS]
+   Generated File[Temperature_Sensor.GTL]
+   Generated File[Temperature_Sensor.GBL]
+   Generated File[Temperature_Sensor.GBS]
+   Generated File[Temperature_Sensor.GBP]
+   Generated File[Temperature_Sensor.GBO]
+   Generated File[Temperature_Sensor.GM1]
+   Generated File[Temperature_Sensor.GM13]
+   Generated File[Temperature_Sensor.GM15]
+   Generated File[Temperature_Sensor.GKO]
+   Generated File[Temperature_Sensor.GPT]
+   Generated File[Temperature_Sensor.GPB]
+   Generated File[Temperature_Sensor.RUL]
+   Generated File[Temperature_Sensor.EXTREP]
+   Generated File[Temperature_Sensor.REP]
+
+
+Files Generated   : 17
+Documents Printed : 0
+
+Finished Output Generation At 8:07:12 PM On 2020-11-03
