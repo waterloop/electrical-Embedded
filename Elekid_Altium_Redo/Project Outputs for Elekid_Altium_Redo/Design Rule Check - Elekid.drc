@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\tonyw\Documents\GitHub\electrical-Embedded\Elekid_Altium_Redo\Elekid.PcbDoc
-Date     : 2020-09-14
-Time     : 10:04:56 AM
+Date     : 2020-11-26
+Time     : 7:52:12 PM
 
 Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
 Rule Violations :0
@@ -18,7 +18,7 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=10mil) (Max=100mil) (Preferred=25mil) (All)
 Rule Violations :0
 
-Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=15mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=5mil) (Air Gap=5mil) (Entries=4) (All)
@@ -46,6 +46,7 @@ Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+   Violation between Board Outline Clearance(Outline Edge): (3.775mil < 7.874mil) Between Board Edge And Text "R15" (2864.005mil,1974.987mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (1082.284mil,-49.961mil)(1082.284mil,5.157mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (1205.315mil,-49.016mil)(1205.315mil,6.102mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (1205.315mil,-49.016mil)(1457.284mil,-49.016mil) on Top Overlay 
@@ -61,12 +62,12 @@ Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (705.784mil,-49.803mil)(705.784mil,5.315mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (830.315mil,-49.961mil)(1082.284mil,-49.961mil) on Top Overlay 
    Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (830.315mil,-49.961mil)(830.315mil,5.157mil) on Top Overlay 
-Rule Violations :15
+Rule Violations :16
 
 Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (Disabled)(All)
 Rule Violations :0
 
 
-Violations Detected : 15
+Violations Detected : 16
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02

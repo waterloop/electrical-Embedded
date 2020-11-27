@@ -1,0 +1,10 @@
+Output: Export STEP
+Type  : ExportSTEP
+From  : PCB Document [Elekid.PcbDoc]
+   Generated File[Elekid.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 7:59:01 PM On 2020-11-26
