@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for Elekid_Breakout_Board
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -72,7 +72,7 @@ GenerateClassCluster=0
 DocumentUniqueId=LRJMSOIH
 
 [Document3]
-DocumentPath=Job1.OutJob
+DocumentPath=JLCPCB.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -89,15 +89,83 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Elekid_Breakout_Board\ExportSTEP\Breakout_Board.step
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Free Documents\ExportSTEP\Breakout_Board.step
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Elekid_Breakout_Board\Design Rule Check - Breakout_Board.html
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.REP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Elekid_Breakout_Board\Elekid_Breakout_Board RFQ\Breakout_Board.TXT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -109,6 +177,9 @@ Variant=[No Variations]
 OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
+
+[Generic_EDE]
+OutputDir=Project Outputs for Elekid_Breakout_Board
 
 [OutputGroup1]
 Name=Netlist Outputs

@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for Elekid_Altium_Redo
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -157,23 +157,6 @@ GenerateClassCluster=0
 DocumentUniqueId=ZFDCJEFL
 
 [Document8]
-DocumentPath=Elekid_Altium_Redo.OutJob
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document9]
 DocumentPath=Elekid.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -190,6 +173,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NOJUCVDS
 
+[Document9]
+DocumentPath=JLCPCB.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Elekid_Altium_Redo\BOM\Bill of Materials-Elekid_Altium_Redo.xlsx
 DItemRevisionGUID=
@@ -199,19 +199,95 @@ DocumentPath=Project Outputs for Elekid_Altium_Redo\Design Rule Check - Elekid.h
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Elekid_Altium_Redo\Gerber\Elekid.EXTREP
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Elekid_Altium_Redo\Gerber\Elekid.REP
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Elekid_Altium_Redo\Gerber\Elekid.RUL
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Gerber\Elekid.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.REP
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Gerber\Elekid.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument24]
 DocumentPath=Project Outputs for Elekid_Altium_Redo\ExportSTEP\Elekid.step
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Elekid_Altium_Redo\Elekid_Altium_Redo RFQ\Elekid.TXT
 DItemRevisionGUID=
 
 [Configuration1]
@@ -261,7 +337,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for Elekid_Altium_Redo
 
 [OutputGroup1]
 Name=Netlist Outputs
