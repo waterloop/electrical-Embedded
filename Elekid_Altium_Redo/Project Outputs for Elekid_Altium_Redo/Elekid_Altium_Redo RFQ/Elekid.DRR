@@ -1,0 +1,25 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Elekid.PcbDoc   2020-12-03  10:17:44 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Elekid.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             29        PTH        0.00inch (0.00mm)
+T2      18mil (0.457mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T3      25mil (0.635mm)                                           Round             2         PTH        0.00inch (0.00mm)
+T4      28mil (0.7mm)                                             Round             10        PTH        0.00inch (0.00mm)
+T5      28mil (0.711mm)                                           Round             3         PTH        0.00inch (0.00mm)
+T6      35mil (0.9mm)                                             Round             2         PTH        0.00inch (0.00mm)
+T7      39mil (1mm)                                               Round             4         PTH        0.00inch (0.00mm)
+T8      43mil (1.1mm)                                             Round             5         PTH        0.00inch (0.00mm)
+T9      62mil (1.57mm)                                            Round             16        PTH        0.00inch (0.00mm)
+T10     71mil (1.8mm)                                             Round             2         PTH        0.00inch (0.00mm)
+T11     106mil (2.7mm)                                            Round             2         PTH        0.00inch (0.00mm)
+T12     118mil (3mm)                                              Round             3         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              79
+
+Total Processing Time (hh:mm:ss) : 00:00:00

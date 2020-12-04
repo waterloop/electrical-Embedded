@@ -1,10 +1,12 @@
-Output: Export STEP
-Type  : ExportSTEP
-From  : Variant [[No Variations]] of PCB Document [Elekid.PcbDoc]
-   Generated File[Elekid.step]
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Elekid.PcbDoc]
+   Generated File[Elekid.TXT]
+   Generated File[Elekid.LDP]
+   Generated File[Elekid.DRR]
 
 
-Files Generated   : 1
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 5:16:51 PM On 2020-11-28
+Finished Output Generation At 10:17:44 PM On 2020-12-03
