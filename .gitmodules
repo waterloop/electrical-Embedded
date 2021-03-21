@@ -1,3 +1,6 @@
 [submodule "Libraries/Waterloop"]
 	path = Libraries/Waterloop
 	url = https://github.com/waterloop/electrical-AltiumLibraries
+[submodule "electrical-AltiumLibraries"]
+	path = electrical-AltiumLibraries
+	url = https://github.com/waterloop/electrical-AltiumLibraries.git
