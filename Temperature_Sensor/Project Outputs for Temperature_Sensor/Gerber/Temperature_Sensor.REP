@@ -2,50 +2,13 @@
 FileName = Temperature_Sensor.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Paste
-      File : Temperature_Sensor.GBP
+Generating : Bottom Overlay
+      File : Temperature_Sensor.GBO
 
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
+    Adding Layer      : Bottom Overlay
 
 
 Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : Temperature_Sensor.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D13
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-    D45
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 13
-      File : Temperature_Sensor.GM13
-
-    Adding Layer      : Mechanical 13
-
-
-Used DCodes :
-    D11
-    D12
 *************************************************************
 
 *************************************************************
@@ -66,11 +29,26 @@ Used DCodes :
     D19
     D20
     D21
-    D38
+    D22
+    D23
     D39
     D40
     D41
     D42
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Temperature_Sensor.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
 *************************************************************
 
 *************************************************************
@@ -103,101 +81,8 @@ Used DCodes :
     D19
     D20
     D21
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : Temperature_Sensor.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Temperature_Sensor.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : Temperature_Sensor.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-    D46
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : Temperature_Sensor.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D38
-    D39
-    D40
-    D41
-    D42
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 15
-      File : Temperature_Sensor.GM15
-
-    Adding Layer      : Mechanical 15
-
-
-Used DCodes :
-    D12
-    D47
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : Temperature_Sensor.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D22
     D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
 *************************************************************
 
 *************************************************************
@@ -212,6 +97,86 @@ Generating : Bottom Solder
 
 
 Used DCodes :
+    D34
+    D35
+    D36
+    D37
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Temperature_Sensor.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Temperature_Sensor.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : Temperature_Sensor.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D44
+    D46
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Temperature_Sensor.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D39
+    D40
+    D41
+    D42
+    D43
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Temperature_Sensor.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
     D30
     D31
     D32
@@ -220,6 +185,35 @@ Used DCodes :
     D35
     D36
     D37
+    D38
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Temperature_Sensor.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D39
+    D40
+    D41
+    D42
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Temperature_Sensor.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D44
+    D45
 *************************************************************
 
 *************************************************************
@@ -241,13 +235,12 @@ Used DCodes :
     D19
     D20
     D21
-    D38
+    D22
+    D23
     D39
     D40
     D41
     D42
     D43
-    D44
-    D45
 *************************************************************
 
