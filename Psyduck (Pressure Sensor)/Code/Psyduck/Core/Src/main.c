@@ -100,7 +100,7 @@ int main(void)
   MX_ADC2_Init();
   MX_CAN_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_START_DMA(&hadc2, (uint32_t*)ADC2ConvertedValues, 64);
+  HAL_ADC_Start_DMA(&hadc2, (uint32_t*)ADC2ConvertedValues, 64);
   HAL_ADC_Start(&hadc2);
   uint8_t flag = 0;
   /* USER CODE END 2 */
@@ -321,10 +321,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_ADC_ConvCpltCallback(AD_HandleTypeDef* hadc) {
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	for (uint8_t i=0; i < 3; i++) {
-		sum = 0;
-		mean = 0;
+		uint32_t sum = 0;
+		double mean = 0;
 
 		for(uint8_t j=0; j < 16; j++) {
 			sum += ADC2ConvertedValues[i + 4*j];
@@ -332,7 +332,11 @@ void HAL_ADC_ConvCpltCallback(AD_HandleTypeDef* hadc) {
 
 		mean = sum*3.3/65520; //Converting from ADC value to voltage
 		//i = 0, psi250 max. i=1, 2, psi100 max
-		pressure[i] = (i < 1)((mean*62.5) + 62.5) + (i > 1)((mean*25) + 25);
+		if(i < 1)
+			pressure[i] = (mean*62.5) + 62.5;
+		else
+			pressure[i] = (mean*25) + 25;
+		//pressure[i] = (i < 1)((mean*62.5) + 62.5) + (i > 1)((mean*25) + 25);
 		current = mean/50;
 	}
 }
