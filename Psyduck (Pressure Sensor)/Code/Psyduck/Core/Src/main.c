@@ -333,6 +333,7 @@ void HAL_ADC_ConvCpltCallback(AD_HandleTypeDef* hadc) {
 		mean = sum*3.3/65520; //Converting from ADC value to voltage
 		//i = 0, psi250 max. i=1, 2, psi100 max
 		pressure[i] = (i < 1)((mean*62.5) + 62.5) + (i > 1)((mean*25) + 25);
+		current = mean/50;
 	}
 }
 /* USER CODE END 4 */
