@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Temperature_Sensor.PcbDoc   2020-11-03  8:07:11 PM
+NCDrill File Report For: Temperature_Sensor.PcbDoc   2021-03-24  8:59:16 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,11 +7,9 @@ ASCII RoundHoles File : Temperature_Sensor.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      20mil (0.5mm)                                             Round             2         PTH        0.00inch (0.00mm)
-T2      28mil (0.701mm)                                           Round             10        PTH        0.00inch (0.00mm)
-T3      28mil (0.711mm)                                           Round             13        PTH        0.00inch (0.00mm)
-T4      43mil (1.1mm)                                             Round             4         PTH        0.00inch (0.00mm)
-T5      118mil (3mm)                                              Round             2         PTH        0.00inch (0.00mm)
+T1      28mil (0.711mm)                                           Round             11        PTH        0.00inch (0.00mm)
+T2      35mil (0.899mm)                                           Round             18        PTH        0.00inch (0.00mm)
+T3      118mil (3mm)                                              Round             2         PTH        0.00inch (0.00mm)
 ----------------------------------------------------------------------------------------------------------------------------------
 Totals                                                                              31
 

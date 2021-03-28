@@ -23,11 +23,13 @@ DefaultPcbPcad=0
 ReorderDocumentsOnCompile=1
 NameNetsHierarchically=0
 PowerPortNamesTakePriority=0
+AutoSheetNumbering=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
+IsProjectConflictPreventionWarningsEnabled=1
 OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
@@ -259,162 +261,166 @@ GenerateClassCluster=0
 DocumentUniqueId=WRDMYSWK
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.DRR
+DocumentPath=Project Outputs for Temperature_Sensor\Design Rule Check - Temperature_Sensor.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.DRR
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.EXTREP
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.EXTREP
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBL
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBL
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBO
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBO
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBP
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBP
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBS
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBS
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GKO
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GKO
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM1
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM1
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM13
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM13
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM15
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM15
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPB
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPB
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPT
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPT
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTL
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTL
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTO
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTO
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTP
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTP
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTS
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTS
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.LDP
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.LDP
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.REP
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument36]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.REP
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.REP
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.RUL
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.REP
 DItemRevisionGUID=
 
 [GeneratedDocument38]
-DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.RUL
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument39]
-DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.TXT
+DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument40]
+DocumentPath=Project Outputs for Temperature_Sensor\Gerber\Temperature_Sensor.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument41]
 DocumentPath=Project Outputs for Temperature_Sensor\Temperature_Sensor RFQ\Temperature_Sensor.TXT
 DItemRevisionGUID=
 
@@ -1289,6 +1295,8 @@ MultiChannelAlternate=2
 AlternateItemFail=3
 Type122=2
 Type123=1
+Type124=1
+Type125=1
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
@@ -1356,12 +1364,12 @@ UpdateToLatestRevision=1
 PartTypes=0
 
 [Comparison Options]
-ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
-ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
-ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
-ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
-ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|Confirm=0|UseName=0|InclAllRules=0
-ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
+ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions2=Kind=Component Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions3=Kind=Rule|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
+ComparisonOptions4=Kind=Differential Pair|MinPercent=50|MinMatch=1|ShowMatch=0|UseName=0|InclAllRules=0
+ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=-1|UseName=-1|InclAllRules=0
 
 [SmartPDF]
 PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
