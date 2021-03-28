@@ -1,0 +1,15 @@
+Designator,Value,Description,Footprint,Quantity,Supplier Part Number,Comment
+
+"C1, C2","10uF","Nonpolarized Capacitor","0805 - Capacitor","2","","Capacitor - Nonpolarized"
+"C3, C4","100nF","Nonpolarized Capacitor","0805 - Capacitor","2","","Capacitor - Nonpolarized"
+"C5, C6","27pF","Nonpolarized Capacitor","0805 - Capacitor","2","","Capacitor - Nonpolarized"
+"C7, C8, C9, C10","47nF","Nonpolarized Capacitor","0805 - Capacitor","4","","Capacitor - Nonpolarized"
+"P1","","1x4 Pin Header","HDR1X4","1","","1x4 Header"
+"P2","","1x6 Pin Header","HDR1X6","1","","1x6 Header"
+"P3, P4, P5, P6","","1x2 Pin Header","HDR1X2","4","","NTC THERMISTOR"
+"R1, R3, R5, R7","10K","Resistor","0603 - Resistor","4","","Resistor"
+"R2, R4, R6, R8","500m","Resistor","0603 - Resistor","4","","Resistor"
+"U1","","Integrated Circuit","QFP80P900X900X160-32N","1","","STM32F303K6T6"
+"U2","","Linear Voltage Regulator IC 3.3V 800MA SOT223-4","TLV1117","1","296-21112-1-ND","TLV1117-33IDCYR"
+"U3","","CAN Transceiver IC 4.5V-5.5V 250ns","TJA1051T/3,118","1","568-8684-1-ND","TJA1051T_3,118"
+"Y1","","Crystal Oscillator","2-SMD NO LEAD CRSYSTAL","1","","Oscillator"
