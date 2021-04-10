@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 6:04:57 PM On 4/10/2021
+
+Output: Export STEP
+Type  : ExportSTEP
+From  : PCB Document [Elekid_MCU.PcbDoc]
+   Generated File[Elekid_MCU.step]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 6:05:03 PM On 4/10/2021
