@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 7:22:47 PM On 2021-04-07
+
+Output: Bill of Materials
+Type  : BOM
+From  : Project [ELEKID_POWER.PrjPcb]
+   Generated File[Bill of Materials-ELEKID_POWER.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 7:22:47 PM On 2021-04-07
