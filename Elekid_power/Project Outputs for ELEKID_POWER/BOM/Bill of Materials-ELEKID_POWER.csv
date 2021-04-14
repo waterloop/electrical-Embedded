@@ -11,7 +11,7 @@ Designator,Value,Footprint,Manufacturer,Manufacturer Part Number,Supplier,Suppli
 "D1","","SMA - DIODE","","","","1655-10TQ045SCT-ND","1"
 "F1, F2","","3557-2","","","Digikey, [NoValue]","36-3557-2-ND","2"
 "L1","33uH","MSS1210 - INDUCTOR","","","Mouser","994-MSS1210-333MEB","1"
-"P1, P2","","B4B-XH","","","","","2"
+"P1, P2","","B4B-XH","","","","455-2249-ND","2"
 "P3, P4, P5, P6, P8","","7760","","","Digikey, [NoParam]","36-7760-ND","5"
 "R1, R2","","0603 - Resistor","","","Digikey","P15CECT-ND","2"
 "R3","20.5k","0603 - Resistor","","","","311-20.5KHRCT-ND","1"
