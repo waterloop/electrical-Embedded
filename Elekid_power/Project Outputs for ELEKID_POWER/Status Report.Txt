@@ -1,14 +1,12 @@
-Project Outputs Generation Report
----------------------------------
-Start Output Generation At 5:51:21 PM On 2021-04-14
-
-Output: Bill of Materials
-Type  : BOM
+Output: NC Drill Files
+Type  : NC Drill
 From  : Project [ELEKID_POWER.PrjPcb]
-   Generated File[Bill of Materials-ELEKID_POWER.csv]
+   Generated File[ELEKID_POWER.TXT]
+   Generated File[ELEKID_POWER.LDP]
+   Generated File[ELEKID_POWER.DRR]
 
 
-Files Generated   : 1
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 5:51:24 PM On 2021-04-14
+Finished Output Generation At 6:05:02 PM On 2021-04-14
