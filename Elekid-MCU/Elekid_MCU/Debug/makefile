@@ -61,8 +61,8 @@ all: main-build
 main-build: Elekid_MCU.elf secondary-outputs
 
 # Tool invocations
-Elekid_MCU.elf: $(OBJS) $(USER_OBJS) C:\Users\Yasith\Desktop\Waterloop\electrical-Embedded\Temperature_Sensor\Temperature_Sensor_Code\Elekid_MCU\STM32F303K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Elekid_MCU.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Yasith\Desktop\Waterloop\electrical-Embedded\Temperature_Sensor\Temperature_Sensor_Code\Elekid_MCU\STM32F303K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Elekid_MCU.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Elekid_MCU.elf: $(OBJS) $(USER_OBJS) C:\Users\Yasith\Desktop\Waterloop\electrical-Embedded\Elekid-MCU\Elekid_MCU\STM32F303K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Elekid_MCU.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Yasith\Desktop\Waterloop\electrical-Embedded\Elekid-MCU\Elekid_MCU\STM32F303K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Elekid_MCU.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

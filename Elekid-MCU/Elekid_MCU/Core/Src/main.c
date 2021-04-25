@@ -32,7 +32,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define R_SHUNT 15
+#define R_SHUNT 0.005F
+#define ADC_TO_VOLTAGE 0.000050366F
+#define VGain_1 8.5F
+#define VGain_2 2
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,6 +53,7 @@ CAN_HandleTypeDef hcan;
 uint16_t ADC2ConvertedValues[64];
 double VSense[2]; // first one is 5V, second one is 24V
 double ISense[2]; // first one is 5V, second one is 24V
+float offset[4];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,10 +115,14 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  /*
+
 	  if(flag > 0)
-		  HAL_GPIO_WritePin(CONTROL_FPCA_Pos, CONTROL_Type, GPIO_PIN_SET);
-		  */
+	  {
+		  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);
+	  	  HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
+	  	  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
+	  	  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -334,21 +342,36 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 
 	for (uint8_t i=0; i <= 3; i++) {
 		uint32_t sum = 0;
-		double mean = 0;
+		float mean = 0;
 
 		for(uint8_t j=0; j < 16; j++) {
 			sum += ADC2ConvertedValues[i + 4*j];
 		}
 
-		mean = sum*3.3/65520; //Converting from ADC value to voltage
-		if (i==1)
+		mean = sum*ADC_TO_VOLTAGE; //Converting from ADC value to voltage
+
+		switch (i)
 		{
-			VSense[i] = (mean*25) + 25;
+			case 0:
+				VSense[0] = (mean*VGain_1) + offset[i];
+			break;
+
+			case 1:
+				VSense[1] = (mean*VGain_2) + offset[i];
+				break;
+
+			case 2:
+				ISense[0] = ((mean/50) / R_SHUNT) + offset[i];
+				break;
+
+			case 3:
+				ISense[1] = ((mean/50) / R_SHUNT) + offset[i];
+				break;
+
+			default:
+				break;
 		}
-		else
-		{
-			ISense[i-2] = (mean/50) / R_SHUNT;
-		}
+
 	}
 }
 /* USER CODE END 4 */
