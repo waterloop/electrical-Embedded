@@ -44,10 +44,10 @@ PrefsRevisionGUID=
 DocumentPath=Yamper.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
+AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=0
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -89,7 +89,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=SGRINPOG
 
 [Document4]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\General.SchLib
@@ -106,7 +106,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=DAIDYRXC
 
 [Document5]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\Embedded\Embedded.PcbLib
@@ -123,7 +123,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=JSWJYOTO
 
 [Document6]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\Embedded\Embedded.SchLib
@@ -140,7 +140,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=FGVHRBVX
 
 [Document7]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\General\GeneralComponents.PcbLib
@@ -157,7 +157,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=JCMLCSIT
 
 [Document8]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\General\GeneralComponents.SchLib
@@ -174,7 +174,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=KRVHMJWH
 
 [Document9]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\General\GeneralConnectors.PcbLib
@@ -191,7 +191,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=TAJKIPBO
 
 [Document10]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\General\GeneralConnectors.SchLib
@@ -208,7 +208,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=GRIHQBTT
 
 [Configuration1]
 Name=Sources
