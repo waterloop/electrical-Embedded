@@ -1,0 +1,7 @@
+Comment,Description,Designator,Footprint,LibRef,Quantity
+,,,,,
+Capacitor - Nonpolarized,Nonpolarized Capacitor,"C1, C2, C3, C4, C5, C6, C7, C8, C9",0805 - Capacitor,Capacitor - Nonpolarized,9
+Inductor,Inductor,L1,0805 - Capacitor,Inductor,1
+RED DEBUG LED,Light Emitting Diode,LED1,0805 - Resistor,LED,1
+Resistor,Resistor,"R1, R2, R3, R4, R5, R6",0603 - Resistor,Resistor,6
+Oscillator,Crystal Oscillator,Y1,2-SMD NO LEAD CRSYSTAL,Oscillator,1

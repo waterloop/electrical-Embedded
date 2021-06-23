@@ -1,0 +1,7 @@
+Designator,LibRef,Value,Footprint,Manufacturer,Manufacturer Part Number,Supplier Part Number,Supplier,Description,Comment,Quantity
+
+"C1, C2, C3, C4, C5, C6, C7, C8, C9","Capacitor - Nonpolarized","10nF, 1uF, 100nF, 27pF, 10uF","0805 - Capacitor","","","","","Nonpolarized Capacitor","Capacitor - Nonpolarized","9"
+"L1","Inductor","","0805 - Capacitor","","","","","Inductor","Inductor","1"
+"LED1","LED","","0805 - Resistor","","","","","Light Emitting Diode","RED DEBUG LED","1"
+"R1, R2, R3, R4, R5, R6","Resistor","120, 10k, 80","0603 - Resistor","","","","","Resistor","Resistor","6"
+"Y1","Oscillator","16MHz","2-SMD NO LEAD CRSYSTAL","","","","","Crystal Oscillator","Oscillator","1"
