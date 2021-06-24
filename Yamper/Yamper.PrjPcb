@@ -72,7 +72,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GGNICGGE
+DocumentUniqueId=KVIVTVJK
 
 [Document3]
 DocumentPath=..\electrical-AltiumLibraries\Libraries\Embedded\Embedded.PcbLib
@@ -123,7 +123,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JQEIBKIL
+DocumentUniqueId=JLRPTHJM
 
 [Document6]
 DocumentPath=..\Libraries\Waterloop\Libraries\General\GeneralComponents.PcbLib
@@ -157,7 +157,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JLDMUXGO
+DocumentUniqueId=HAKKZTMK
 
 [Document8]
 DocumentPath=..\Libraries\Waterloop\Libraries\General\GeneralConnectors.PcbLib
@@ -191,7 +191,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=LEGINZND
+DocumentUniqueId=IKOANLEZ
 
 [Document10]
 DocumentPath=Yamper.PCBDwf
