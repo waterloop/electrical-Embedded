@@ -45,7 +45,7 @@ CAN_HandleTypeDef hcan;
 TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
-
+float velocity;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,7 +54,8 @@ static void MX_GPIO_Init(void);
 static void MX_CAN_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-
+void init_timer(void);
+float compute_rpm(int n);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -69,7 +70,8 @@ static void MX_TIM3_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+//	init_debug();
+	init_timer();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -101,10 +103,38 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  HAL_Delay(100);
+	  int count = TIM3->CNT;
+	  velocity = compute_rpm(count);
+	  // TODO: pass this velocity value via CAN
+	  // set leading bit to be 1/0 based on whether v is positive/negative
+	  TIM3->CNT=0;
+	  HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_7);
 
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+}
+
+void init_timer(void) {
+//	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+
+	TIM3->ARR = 0xFFFF;
+
+	TIM3->CCMR1 |= (TIM_CCMR1_CC1S_0 | TIM_CCMR1_CC2S_0);
+	TIM3->CCER &= ~(TIM_CCER_CC1P | TIM_CCER_CC2P);
+	TIM3->SMCR |= TIM_SMCR_SMS_0 | TIM_SMCR_SMS_1;
+	TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+float compute_rpm(int n) {
+	int N = 12;
+	float r = 0.057;
+	float pi = 3.14;
+	float sampling_period_s = 0.1;
+
+	return (2*pi*r*n)/(N*sampling_period_s);
 }
 
 /**
