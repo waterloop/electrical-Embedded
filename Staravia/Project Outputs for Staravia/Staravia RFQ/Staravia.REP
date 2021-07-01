@@ -2,63 +2,78 @@
 FileName = Staravia.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 15
-      File : Staravia.GM15
+Generating : Top Pad Master
+      File : Staravia.GPT
 
-    Adding Layer      : Mechanical 15
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D48
+    D49
+    D50
+    D51
+    D52
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Staravia.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
     D12
-    D54
+    D13
+    D14
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 13
-      File : Staravia.GM13
+Generating : Top Paste
+      File : Staravia.GTP
 
-    Adding Layer      : Mechanical 13
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D12
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 1
-      File : Staravia.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Keep-Out Layer
-      File : Staravia.GKO
-
-    Adding Layer      : Keep-Out Layer
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Staravia.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Staravia.GBP
-
-    Adding Layer      : Bottom Paste
+Generating : Bottom Pad Master
+      File : Staravia.GPB
 
     Adding Layer      : Bottom Layer
 
@@ -66,6 +81,11 @@ Generating : Bottom Paste
 
 
 Used DCodes :
+    D48
+    D49
+    D50
+    D51
+    D52
 *************************************************************
 
 *************************************************************
@@ -86,7 +106,6 @@ Used DCodes :
     D42
     D43
     D44
-    D45
 *************************************************************
 
 *************************************************************
@@ -119,82 +138,13 @@ Used DCodes :
     D42
     D43
     D44
-    D45
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : Staravia.GTP
+Generating : Bottom Paste
+      File : Staravia.GBP
 
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : Staravia.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : Staravia.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D46
-    D47
-    D48
-    D49
-    D50
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : Staravia.GPB
+    Adding Layer      : Bottom Paste
 
     Adding Layer      : Bottom Layer
 
@@ -202,11 +152,39 @@ Generating : Bottom Pad Master
 
 
 Used DCodes :
-    D46
-    D47
-    D48
-    D49
-    D50
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Staravia.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : Staravia.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : Staravia.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D12
+    D54
 *************************************************************
 
 *************************************************************
@@ -219,8 +197,8 @@ Generating : Bottom Layer
 
 
 Used DCodes :
+    D13
     D46
-    D47
     D48
     D49
     D50
@@ -252,6 +230,7 @@ Used DCodes :
     D24
     D25
     D26
+    D45
     D46
     D47
     D48
@@ -259,5 +238,27 @@ Used DCodes :
     D50
     D51
     D52
+    D53
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Staravia.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Staravia.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D12
 *************************************************************
 
