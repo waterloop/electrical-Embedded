@@ -19,6 +19,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "CAN_Driver.h"
+#include <math.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -32,6 +34,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define N 12
+#define R 0.057
+#define SAMPLING_PERIOD_S 0.1
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,6 +51,7 @@ TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
 float velocity;
+uint8_t bytes_array;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,6 +100,7 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_TIM3_Init();
+  HAL_CAN_Start(&hcan);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -106,8 +113,9 @@ int main(void)
 	  HAL_Delay(100);
 	  int count = TIM3->CNT;
 	  velocity = compute_rpm(count);
-	  // TODO: pass this velocity value via CAN
-	  // set leading bit to be 1/0 based on whether v is positive/negative
+	  add_data(velocity, bytes_array, BIT32, 1, 0);
+	  HAL_CAN_AddTxMessage(&hcan, &TxHeader, bytes_array, &TxMailBox );  // load message to mailbox
+	  while (HAL_CAN_IsTxMessagePending(&hcan, TxMailBox)); 		//waiting till message gets through
 	  TIM3->CNT=0;
 	  HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_7);
 
@@ -117,7 +125,6 @@ int main(void)
 }
 
 void init_timer(void) {
-//	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 
 	TIM3->ARR = 0xFFFF;
@@ -129,12 +136,7 @@ void init_timer(void) {
 }
 
 float compute_rpm(int n) {
-	int N = 12;
-	float r = 0.057;
-	float pi = 3.14;
-	float sampling_period_s = 0.1;
-
-	return (2*pi*r*n)/(N*sampling_period_s);
+	return (2*M_PI*R*n)/(N*SAMPLING_PERIOD_S);
 }
 
 /**
