@@ -19,12 +19,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "CAN_Driver.h"
-#include <math.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,10 +46,13 @@
 CAN_HandleTypeDef hcan;
 
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
-float velocity;
-uint8_t bytes_array;
+float* velocity;
+uint8_t bytes_array[4];
+CAN_TxHeaderTypeDef TxHeader;
+extern uint32_t TxMailbox;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,14 +60,29 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM14_Init(void);
 /* USER CODE BEGIN PFP */
 void init_timer(void);
 float compute_rpm(int n);
+void add_data(void *val, uint8_t *bytes_array, uint8_t size, uint8_t is_float, uint8_t start_pos);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void init_timer(void) {
+	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 
+	TIM3->ARR = 0xFFFF;
+
+	TIM3->CCMR1 |= (TIM_CCMR1_CC1S_0 | TIM_CCMR1_CC2S_0);
+	TIM3->CCER &= ~(TIM_CCER_CC1P | TIM_CCER_CC2P);
+	TIM3->SMCR |= TIM_SMCR_SMS_0 | TIM_SMCR_SMS_1;
+	TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+float compute_rpm(int n) {
+	return (2*M_PI*R*n)/(N*SAMPLING_PERIOD_S);
+}
 /* USER CODE END 0 */
 
 /**
@@ -76,7 +92,6 @@ float compute_rpm(int n);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-//	init_debug();
 	init_timer();
   /* USER CODE END 1 */
 
@@ -100,9 +115,11 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_TIM3_Init();
-  HAL_CAN_Start(&hcan);
+  MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_CAN_Start(&hcan);
+  HAL_TIM_Base_Start_IT(&htim14);
+  __HAL_TIM_SET_COUNTER(&htim14, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -110,33 +127,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_Delay(100);
-	  int count = TIM3->CNT;
-	  velocity = compute_rpm(count);
-	  add_data(velocity, bytes_array, BIT32, 1, 0);
-	  HAL_CAN_AddTxMessage(&hcan, &TxHeader, bytes_array, &TxMailBox );  // load message to mailbox
-	  while (HAL_CAN_IsTxMessagePending(&hcan, TxMailBox)); 		//waiting till message gets through
-	  TIM3->CNT=0;
-	  HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_7);
 
     /* USER CODE BEGIN 3 */
+	  HAL_Delay(100);
+	  int count = TIM3->CNT;
+	  *velocity = compute_rpm(count);
+	  add_data(velocity, bytes_array, 32, 1, 0);
+	  HAL_CAN_AddTxMessage(&hcan, &TxHeader, bytes_array, &TxMailbox);  // load message to mailbox
+	  while (HAL_CAN_IsTxMessagePending(&hcan, TxMailbox)); 		//waiting till message gets through
+	  TIM3->CNT=0;
   }
   /* USER CODE END 3 */
-}
-
-void init_timer(void) {
-	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
-
-	TIM3->ARR = 0xFFFF;
-
-	TIM3->CCMR1 |= (TIM_CCMR1_CC1S_0 | TIM_CCMR1_CC2S_0);
-	TIM3->CCER &= ~(TIM_CCER_CC1P | TIM_CCER_CC2P);
-	TIM3->SMCR |= TIM_SMCR_SMS_0 | TIM_SMCR_SMS_1;
-	TIM3->CR1 |= TIM_CR1_CEN;
-}
-
-float compute_rpm(int n) {
-	return (2*M_PI*R*n)/(N*SAMPLING_PERIOD_S);
 }
 
 /**
@@ -151,10 +152,12 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48;
+  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI48;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL7;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV8;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -163,11 +166,11 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -189,11 +192,11 @@ static void MX_CAN_Init(void)
 
   /* USER CODE END CAN_Init 1 */
   hcan.Instance = CAN;
-  hcan.Init.Prescaler = 16;
+  hcan.Init.Prescaler = 6;
   hcan.Init.Mode = CAN_MODE_NORMAL;
   hcan.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan.Init.TimeSeg1 = CAN_BS1_1TQ;
-  hcan.Init.TimeSeg2 = CAN_BS2_1TQ;
+  hcan.Init.TimeSeg1 = CAN_BS1_11TQ;
+  hcan.Init.TimeSeg2 = CAN_BS2_2TQ;
   hcan.Init.TimeTriggeredMode = DISABLE;
   hcan.Init.AutoBusOff = DISABLE;
   hcan.Init.AutoWakeUp = DISABLE;
@@ -205,7 +208,8 @@ static void MX_CAN_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN_Init 2 */
-
+  TxHeader.StdId = 0x1F;
+  TxHeader.ExtId = 0;
   /* USER CODE END CAN_Init 2 */
 
 }
@@ -260,6 +264,37 @@ static void MX_TIM3_Init(void)
 }
 
 /**
+  * @brief TIM14 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM14_Init(void)
+{
+
+  /* USER CODE BEGIN TIM14_Init 0 */
+
+  /* USER CODE END TIM14_Init 0 */
+
+  /* USER CODE BEGIN TIM14_Init 1 */
+
+  /* USER CODE END TIM14_Init 1 */
+  htim14.Instance = TIM14;
+  htim14.Init.Prescaler = 0;
+  htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim14.Init.Period = 65535;
+  htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim14) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM14_Init 2 */
+
+  /* USER CODE END TIM14_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -286,7 +321,9 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_7);
+}
 /* USER CODE END 4 */
 
 /**
