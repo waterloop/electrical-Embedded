@@ -32,6 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ADC2V	0.0008058608F // 3.3/4065
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,10 +49,11 @@ CAN_HandleTypeDef hcan;
 /* USER CODE BEGIN PV */
 uint16_t ADC2ConvertedValues[64];
 double temperature[4];
-double temperature_coefficients[7] = { 0.138169980083766, -1.217224803711306, 4.247427897249789, -7.514843765988409, 7.207695652465472, -3.996991313967717, 1.592960984517588};
+double temperature_coefficients[7] = { 0.138169980083766, -1.217224803711306, 4.247427897249789,
+					-7.514843765988409, 7.207695652465472, -3.996991313967717, 1.592960984517588};
 uint32_t sum = 0;
 double mean = 0;
-
+double offset[4] = {0.0, 0.0, 0.0, 0.0};
 
 /* USER CODE END PV */
 
@@ -315,12 +317,14 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 			sum += ADC2ConvertedValues[i + 4*j];
 		}
 
-		mean = sum*3.3/65520; //Converting from ADC value to voltage
+		mean = sum/16.0; //Converting from ADC value to voltage
 
-		for (uint8_t num_temp = 0; i < 4; i++){
-			for(uint8_t degree = 0; degree < 6; degree ++){
-				temperature[num_temp] = temperature[num_temp]*mean + temperature_coefficients[degree];
+		for (uint8_t i = 0; i < 4; i++){
+			temperature[i] = temperature_coefficients[0];
+			for (uint8_t k = 0; k < 9; k++ ) {
+				temperature[i] = temperature[i]*mean + temperature_coefficients[k];
 			}
+			temperature[i] -= offset[i];
 		}
 
 
