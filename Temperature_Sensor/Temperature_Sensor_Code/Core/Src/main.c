@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,14 +46,23 @@ DMA_HandleTypeDef hdma_adc2;
 
 CAN_HandleTypeDef hcan;
 
+TIM_HandleTypeDef htim2;
+
 /* USER CODE BEGIN PV */
 uint16_t ADC2ConvertedValues[64];
-double temperature[4];
-double temperature_coefficients[7] = { 0.138169980083766, -1.217224803711306, 4.247427897249789,
+float temperature[4];
+float temperature_coefficients[7] = { 0.138169980083766, -1.217224803711306, 4.247427897249789,
 					-7.514843765988409, 7.207695652465472, -3.996991313967717, 1.592960984517588};
 uint32_t sum = 0;
-double mean = 0;
-double offset[4] = {0.0, 0.0, 0.0, 0.0};
+float mean = 0;
+float offset[4] = {0.0, 0.0, 0.0, 0.0};
+uint8_t temp_bytes1[4];
+uint8_t temp_bytes2[4];
+uint8_t IDs[2] = {0x40, 0x41};			// 0x42, 0x43 for the other board
+uint8_t Data[8];
+uint32_t TxMailBox = 0;
+CAN_TxHeaderTypeDef TxHeader;
+CAN_FilterTypeDef FilterConfig;
 
 /* USER CODE END PV */
 
@@ -63,6 +72,7 @@ static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void MX_CAN_Init(void);
 static void MX_ADC2_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -103,8 +113,13 @@ int main(void)
   MX_DMA_Init();
   MX_CAN_Init();
   MX_ADC2_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  hcan.Instance->MCR = 0x60; // important for debugging canbus, allows for normal operation during debugging
+  HAL_CAN_Start(&hcan);
   HAL_ADC_Start_DMA(&hadc2, (uint32_t*)ADC2ConvertedValues,64);
+  HAL_TIM_Base_Start_IT(&htim2);
+  __HAL_TIM_SET_COUNTER(&htim2, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -133,11 +148,11 @@ void SystemClock_Config(void)
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV2;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -214,6 +229,7 @@ static void MX_ADC2_Init(void)
   }
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_2;
   sConfig.Rank = ADC_REGULAR_RANK_2;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
   {
@@ -221,6 +237,7 @@ static void MX_ADC2_Init(void)
   }
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_3;
   sConfig.Rank = ADC_REGULAR_RANK_3;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
   {
@@ -228,6 +245,7 @@ static void MX_ADC2_Init(void)
   }
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_REGULAR_RANK_4;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
   {
@@ -255,11 +273,11 @@ static void MX_CAN_Init(void)
 
   /* USER CODE END CAN_Init 1 */
   hcan.Instance = CAN;
-  hcan.Init.Prescaler = 16;
+  hcan.Init.Prescaler = 4;
   hcan.Init.Mode = CAN_MODE_NORMAL;
   hcan.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan.Init.TimeSeg1 = CAN_BS1_1TQ;
-  hcan.Init.TimeSeg2 = CAN_BS2_1TQ;
+  hcan.Init.TimeSeg1 = CAN_BS1_11TQ;
+  hcan.Init.TimeSeg2 = CAN_BS2_4TQ;
   hcan.Init.TimeTriggeredMode = DISABLE;
   hcan.Init.AutoBusOff = DISABLE;
   hcan.Init.AutoWakeUp = DISABLE;
@@ -271,8 +289,70 @@ static void MX_CAN_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN_Init 2 */
+  FilterConfig.FilterIdHigh = 0x0000;
+  FilterConfig.FilterIdLow = 0x0000;
+  FilterConfig.FilterMaskIdHigh = 0x0000;
+  FilterConfig.FilterMaskIdLow = 0x0000;
+  FilterConfig.FilterFIFOAssignment = CAN_FILTER_FIFO0;
+  FilterConfig.FilterBank = 13;
+  FilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  FilterConfig.FilterScale = CAN_FILTERSCALE_16BIT;
+  FilterConfig.FilterActivation = CAN_FILTER_ENABLE;
+  HAL_CAN_ConfigFilter(&hcan, &FilterConfig);
 
+  //Configuring TX:
+  TxHeader.StdId = 0x00;
+  //TxHeader.ExtId = 0x01;
+  TxHeader.RTR = CAN_RTR_DATA; 	 			// want data frame
+  TxHeader.IDE = CAN_ID_EXT;	 			// want extended frame
+  TxHeader.DLC = 8;			 	 			// amounts of bytes u sending
+  TxHeader.TransmitGlobalTime = DISABLE;
   /* USER CODE END CAN_Init 2 */
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 31999;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 399;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
 
 }
 
@@ -307,6 +387,18 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void float2Bytes(float val, uint8_t *bytes_array){
+  // Create union of shared memory space
+  union {
+    float float_variable;
+    uint8_t temp_array[4];
+  } u;
+  // Overite bytes of union with float variable
+  u.float_variable = val;
+  // Assign bytes to input array
+  memcpy(bytes_array, u.temp_array, 4);
+}
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	for (uint8_t i=0; i < 3; i++) {
 		sum = 0;
@@ -317,8 +409,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 			sum += ADC2ConvertedValues[i + 4*j];
 		}
 
-		mean = sum/16.0; //Converting from ADC value to voltage
+		mean = sum/16.0;
 
+		//temperature[i] = mean*ADC2V;    		//for debugging
 		for (uint8_t i = 0; i < 4; i++){
 			temperature[i] = temperature_coefficients[0];
 			for (uint8_t k = 0; k < 9; k++ ) {
@@ -329,6 +422,24 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 
 
 	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+	for (uint8_t i=0; i < 2; ++i) { 										//looping through CAN messages and sending data acquired
+
+				TxHeader.StdId = IDs[i];
+				float2Bytes(temperature[i], &temp_bytes1[0]); 						//converting the floats to packets of bytes
+				float2Bytes(temperature[i], &temp_bytes2[0]);
+
+				for (uint8_t j=0 ; j < 4; j++) {
+
+					Data[3-j] = temp_bytes1[j]; 									//writing down for the data buffer
+					Data[7-j] = temp_bytes2[j];
+				}
+
+				HAL_CAN_AddTxMessage(&hcan, &TxHeader, Data, &TxMailBox ); 	// load message to mailbox
+				while (HAL_CAN_IsTxMessagePending( &hcan, TxMailBox));		//waiting till message gets through
+			}
 }
 /* USER CODE END 4 */
 

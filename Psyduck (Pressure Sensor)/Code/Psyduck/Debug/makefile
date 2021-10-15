@@ -76,8 +76,8 @@ all: main-build
 main-build: Psyduck.elf secondary-outputs
 
 # Tool invocations
-Psyduck.elf: $(OBJS) $(USER_OBJS) C:\Users\MinYoung\ Park\STM32CubeIDE\workspace_1.6.0\Psyduck\STM32F303K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "Psyduck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\MinYoung Park\STM32CubeIDE\workspace_1.6.0\Psyduck\STM32F303K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Psyduck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Psyduck.elf: $(OBJS) $(USER_OBJS) C:\Users\Owner\Desktop\Waterloop\Embedded\ git\electrical-Embedded\Psyduck\ (Pressure\ Sensor)\Code\Psyduck\STM32F303K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Psyduck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Owner\Desktop\Waterloop\Embedded git\electrical-Embedded\Psyduck (Pressure Sensor)\Code\Psyduck\STM32F303K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Psyduck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
