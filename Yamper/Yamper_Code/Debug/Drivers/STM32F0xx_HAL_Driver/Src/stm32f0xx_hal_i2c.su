@@ -65,15 +65,4 @@ stm32f0xx_hal_i2c.c:6005:13:I2C_Flush_TXDR	16	static
 stm32f0xx_hal_i2c.c:6026:13:I2C_DMAMasterTransmitCplt	24	static
 stm32f0xx_hal_i2c.c:6074:13:I2C_DMASlaveTransmitCplt	24	static
 stm32f0xx_hal_i2c.c:6101:13:I2C_DMAMasterReceiveCplt	24	static
-stm32f0xx_hal_i2c.c:6149:13:I2C_DMASlaveReceiveCplt	24	static
-stm32f0xx_hal_i2c.c:6176:13:I2C_DMAError	24	static
-stm32f0xx_hal_i2c.c:6193:13:I2C_DMAAbort	24	static
-stm32f0xx_hal_i2c.c:6220:26:I2C_WaitOnFlagUntilTimeout	24	static
-stm32f0xx_hal_i2c.c:6251:26:I2C_WaitOnTXISFlagUntilTimeout	24	static
-stm32f0xx_hal_i2c.c:6288:26:I2C_WaitOnSTOPFlagUntilTimeout	24	static
-stm32f0xx_hal_i2c.c:6322:26:I2C_WaitOnRXNEFlagUntilTimeout	24	static
-stm32f0xx_hal_i2c.c:6385:26:I2C_IsAcknowledgeFailed	24	static
-stm32f0xx_hal_i2c.c:6453:13:I2C_TransferConfig	32	static
-stm32f0xx_hal_i2c.c:6476:13:I2C_Enable_IRQ	24	static
-stm32f0xx_hal_i2c.c:6547:13:I2C_Disable_IRQ	24	static
-stm32f0xx_hal_i2c.c:6610:13:I2C_ConvertOtherXferOptions	16	static
+stm32f0xx_hal_i2c.c:6149:13:I

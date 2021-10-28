@@ -61,8 +61,8 @@ all: main-build
 main-build: Yamper.elf secondary-outputs
 
 # Tool invocations
-Yamper.elf: $(OBJS) $(USER_OBJS) C:\Users\jennc\Documents\GitHub\electrical-Embedded\Yamper\Yamper_Code\STM32F042K4TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Yamper.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\jennc\Documents\GitHub\electrical-Embedded\Yamper\Yamper_Code\STM32F042K4TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Yamper.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Yamper.elf: $(OBJS) $(USER_OBJS) C:\Users\Owner\Desktop\Waterloop\Embedded\ git\electrical-Embedded\Yamper\Yamper_Code\STM32F042K4TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Yamper.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\Owner\Desktop\Waterloop\Embedded git\electrical-Embedded\Yamper\Yamper_Code\STM32F042K4TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Yamper.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

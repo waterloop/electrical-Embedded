@@ -49,8 +49,8 @@ CAN_HandleTypeDef hcan;
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
-uint16_t ADC2ConvertedValues[64];
-float temperature[4];
+uint16_t ADC2ConvertedValues[256];
+float temperature[4] = { 0.0, 0.0, 0.0, 0.0};
 float temperature_coefficients[7] = { 0.138169980083766, -1.217224803711306, 4.247427897249789,
 					-7.514843765988409, 7.207695652465472, -3.996991313967717, 1.592960984517588};
 uint32_t sum = 0;
@@ -58,7 +58,7 @@ float mean = 0;
 float offset[4] = {0.0, 0.0, 0.0, 0.0};
 uint8_t temp_bytes1[4];
 uint8_t temp_bytes2[4];
-uint8_t IDs[2] = {0x40, 0x41};			// 0x42, 0x43 for the other board
+uint8_t IDs[2] = {0x02, 0x41};			// 0x42, 0x43 for the other board
 uint8_t Data[8];
 uint32_t TxMailBox = 0;
 CAN_TxHeaderTypeDef TxHeader;
@@ -117,15 +117,31 @@ int main(void)
   /* USER CODE BEGIN 2 */
   hcan.Instance->MCR = 0x60; // important for debugging canbus, allows for normal operation during debugging
   HAL_CAN_Start(&hcan);
-  HAL_ADC_Start_DMA(&hadc2, (uint32_t*)ADC2ConvertedValues,64);
-  HAL_TIM_Base_Start_IT(&htim2);
-  __HAL_TIM_SET_COUNTER(&htim2, 0);
+  HAL_ADC_Start_DMA(&hadc2, (uint32_t*)ADC2ConvertedValues,256);
+  //HAL_TIM_Base_Start_IT(&htim2);
+  //__HAL_TIM_SET_COUNTER(&htim2, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  for (uint8_t i=0; i < 2; ++i) { 										//looping through CAN messages and sending data acquired
+
+	  			TxHeader.StdId = IDs[i];
+	  			float2Bytes(temperature[i], &temp_bytes1[0]); 						//converting the floats to packets of bytes
+	  			float2Bytes(temperature[i], &temp_bytes2[0]);
+
+	  			for (uint8_t j=0 ; j < 4; j++) {
+
+ 					Data[3-j] = temp_bytes1[j]; 									//writing down for the data buffer
+  					Data[7-j] = temp_bytes2[j];
+  				}
+
+  				HAL_CAN_AddTxMessage(&hcan, &TxHeader, Data, &TxMailBox ); 	// load message to mailbox
+  				while (HAL_CAN_IsTxMessagePending( &hcan, TxMailBox));		//waiting till message gets through
+	  }
+	  HAL_Delay(200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -146,13 +162,12 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL4;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -208,7 +223,7 @@ static void MX_ADC2_Init(void)
   hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc2.Init.NbrOfConversion = 4;
   hadc2.Init.DMAContinuousRequests = ENABLE;
-  hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc2.Init.EOCSelection = ADC_EOC_SEQ_CONV;
   hadc2.Init.LowPowerAutoWait = DISABLE;
   hadc2.Init.Overrun = ADC_OVR_DATA_OVERWRITTEN;
   if (HAL_ADC_Init(&hadc2) != HAL_OK)
@@ -276,8 +291,8 @@ static void MX_CAN_Init(void)
   hcan.Init.Prescaler = 4;
   hcan.Init.Mode = CAN_MODE_NORMAL;
   hcan.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan.Init.TimeSeg1 = CAN_BS1_11TQ;
-  hcan.Init.TimeSeg2 = CAN_BS2_4TQ;
+  hcan.Init.TimeSeg1 = CAN_BS1_13TQ;
+  hcan.Init.TimeSeg2 = CAN_BS2_2TQ;
   hcan.Init.TimeTriggeredMode = DISABLE;
   hcan.Init.AutoBusOff = DISABLE;
   hcan.Init.AutoWakeUp = DISABLE;
@@ -304,7 +319,7 @@ static void MX_CAN_Init(void)
   TxHeader.StdId = 0x00;
   //TxHeader.ExtId = 0x01;
   TxHeader.RTR = CAN_RTR_DATA; 	 			// want data frame
-  TxHeader.IDE = CAN_ID_EXT;	 			// want extended frame
+  TxHeader.IDE = CAN_ID_STD;	 			// want extended frame
   TxHeader.DLC = 8;			 	 			// amounts of bytes u sending
   TxHeader.TransmitGlobalTime = DISABLE;
   /* USER CODE END CAN_Init 2 */
@@ -367,7 +382,7 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA1_Channel2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
 
 }
@@ -424,23 +439,10 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	}
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	for (uint8_t i=0; i < 2; ++i) { 										//looping through CAN messages and sending data acquired
+/*void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
-				TxHeader.StdId = IDs[i];
-				float2Bytes(temperature[i], &temp_bytes1[0]); 						//converting the floats to packets of bytes
-				float2Bytes(temperature[i], &temp_bytes2[0]);
-
-				for (uint8_t j=0 ; j < 4; j++) {
-
-					Data[3-j] = temp_bytes1[j]; 									//writing down for the data buffer
-					Data[7-j] = temp_bytes2[j];
-				}
-
-				HAL_CAN_AddTxMessage(&hcan, &TxHeader, Data, &TxMailBox ); 	// load message to mailbox
-				while (HAL_CAN_IsTxMessagePending( &hcan, TxMailBox));		//waiting till message gets through
-			}
-}
+	__HAL_TIM_SET_COUNTER(&htim2, 0);
+} */
 /* USER CODE END 4 */
 
 /**
