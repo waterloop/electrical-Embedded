@@ -126,7 +126,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for (uint8_t i=0; i < 2; ++i) { 										//looping through CAN messages and sending data acquired
+	 /* for (uint8_t i=0; i < 2; ++i) { 										//looping through CAN messages and sending data acquired
 
 	  			TxHeader.StdId = IDs[i];
 	  			float2Bytes(temperature[i], &temp_bytes1[0]); 						//converting the floats to packets of bytes
@@ -141,7 +141,7 @@ int main(void)
   				HAL_CAN_AddTxMessage(&hcan, &TxHeader, Data, &TxMailBox ); 	// load message to mailbox
   				while (HAL_CAN_IsTxMessagePending( &hcan, TxMailBox));		//waiting till message gets through
 	  }
-	  HAL_Delay(200);
+	  HAL_Delay(200); */
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -415,7 +415,7 @@ void float2Bytes(float val, uint8_t *bytes_array){
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-	for (uint8_t i=0; i < 3; i++) {
+	for (uint8_t i=0; i < 4; i++) {
 		sum = 0;
 		mean = 0;
 
@@ -427,13 +427,13 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 		mean = sum/16.0;
 
 		//temperature[i] = mean*ADC2V;    		//for debugging
-		for (uint8_t i = 0; i < 4; i++){
+
 			temperature[i] = temperature_coefficients[0];
 			for (uint8_t k = 0; k < 9; k++ ) {
 				temperature[i] = temperature[i]*mean + temperature_coefficients[k];
 			}
 			temperature[i] -= offset[i];
-		}
+
 
 
 	}
