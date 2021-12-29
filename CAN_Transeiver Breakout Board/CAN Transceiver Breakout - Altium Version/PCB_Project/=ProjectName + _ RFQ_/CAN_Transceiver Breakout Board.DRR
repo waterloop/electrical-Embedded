@@ -1,0 +1,16 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: CAN_Transceiver Breakout Board.PcbDoc   12/28/2021  7:33:10 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : CAN_Transceiver Breakout Board.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             2         PTH        0.08inch (1.90mm)
+T2      35mil (0.9mm)                                             Round             10        PTH        2.12inch (53.88mm)
+T3      126mil (3.2mm)                                            Round             4         PTH        2.31inch (58.68mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              16
+
+Total Processing Time (hh:mm:ss) : 00:00:00

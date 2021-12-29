@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [CAN_Transceiver Breakout Board.PcbDoc]
+   Generated File[CAN_Transceiver Breakout Board.TXT]
+   Generated File[CAN_Transceiver Breakout Board.LDP]
+   Generated File[CAN_Transceiver Breakout Board.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 7:33:10 PM On 12/28/2021
