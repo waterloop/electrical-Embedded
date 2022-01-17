@@ -1,12 +1,14 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : PCB Document [CAN_Transceiver Breakout Board.PcbDoc]
-   Generated File[CAN_Transceiver Breakout Board.TXT]
-   Generated File[CAN_Transceiver Breakout Board.LDP]
-   Generated File[CAN_Transceiver Breakout Board.DRR]
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 1:21:14 PM On 1/15/2022
+
+Output: Bill of Materials
+Type  : BOM
+From  : Project [CAN_Transceiver.PrjPcb]
+   Generated File[Bill of Materials-CAN_Transceiver.xlsx]
 
 
-Files Generated   : 3
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 7:41:07 PM On 12/28/2021
+Finished Output Generation At 1:21:21 PM On 1/15/2022
